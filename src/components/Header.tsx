@@ -3,7 +3,7 @@ import logo from '../images/logo.svg'
 function Header() {
   return (
     <>
-      <header className='topheader absolute z-10 p-18 w-full flex items-start justify-start'>
+      <header className='topheader absolute z-10 p-18 w-full flex items-center justify-start'>
         <img className='logo' src={logo} alt="logo" />
         <nav className='topheader__nav ml-8'>
           <ul className='topheader__list flex gap-6 text-[var(--White)] font-semibold'>

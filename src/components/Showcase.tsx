@@ -13,7 +13,7 @@ const data = [
         desc: "  We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
         mobile: `${basePath}/mobile-image-hero-1.jpg`,
         desktop: `${basePath}/desktop-image-hero-1.jpg`
-        },
+    },
     {
         id: 2,
         title: "We are available all across the globe",
@@ -34,18 +34,18 @@ function Showcase() {
     const [items] = useState(data)
     const [slideIndex, setSlideIndex] = useState(1)
 
-    function nextSlide(){
-        if (slideIndex !== items.length){
+    function nextSlide() {
+        if (slideIndex !== items.length) {
             setSlideIndex(slideIndex + 1)
-        } else if(slideIndex === items.length){
+        } else if (slideIndex === items.length) {
             setSlideIndex(1)
         }
     }
 
-    function previousSlide(){
-        if (slideIndex !== 1){
+    function previousSlide() {
+        if (slideIndex !== 1) {
             setSlideIndex(slideIndex - 1)
-        } else if(slideIndex === 1){
+        } else if (slideIndex === 1) {
             setSlideIndex(items.length)
         }
     }
@@ -62,19 +62,23 @@ function Showcase() {
                         <div className='sliders__images w-full lg:w-[55%] relative'>
                             <picture>
                                 <source media="(min-width: 768px)" srcSet={item.desktop} />
-                                <img src={item.mobile} alt={item.title} className='w-full'/>
+                                <img src={item.mobile} alt={item.title} className='w-full' />
                             </picture>
-                            <ul className='sliders__change absolute bottom-0 right-0 flex'>
-                                <li><button onClick={previousSlide} className='bg-[var(--Black)] p-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={left}  alt="Previous slide" /></button></li>
-                                <li><button onClick={nextSlide} className='bg-[var(--Black)] p-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={right}  alt="Next slide" /></button></li>
+                            <ul className='sliders__change absolute bottom-0 right-0 flex lg:hidden'>
+                                <li><button onClick={previousSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={left} alt="Previous slide" /></button></li>
+                                <li><button onClick={nextSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={right} alt="Next slide" /></button></li>
                             </ul>
                         </div>
-                        <div className='sliders__info p-8 w-full lg:w-[45%] flex flex-col self-center'>
+                        <div className='sliders__info px-8 py-20 w-full lg:w-[45%] flex flex-col relative'>
                             <h2 className='sliders__info-title text-3xl lg:text-5xl font-bold'>{item.title}</h2>
                             <p className='sliders__info-description text-[var(--Grey-800)] my-6'>{item.desc}</p>
                             <button className='sliders__info-shopnowbutton uppercase tracking-widest flex items-center gap-4 hover:opacity-75 cursor-pointer'>
                                 Shop now <img src={shop} alt="Ship now button" />
                             </button>
+                            <ul className='sliders__change absolute bottom-0 left-0 flex hidden lg:flex'>
+                                <li><button onClick={previousSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={left} alt="Previous slide" /></button></li>
+                                <li><button onClick={nextSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={right} alt="Next slide" /></button></li>
+                            </ul>
                         </div>
                     </article>
                 ))}

@@ -4,7 +4,7 @@ import light from '../images/image-about-light.jpg'
 function InfoSection() {
     return (
         <>
-            <section className='infosection grid grid-cols-1 lg:grid-cols-3'>
+            <section className='infosection grid grid-cols-1 lg:grid-cols-[1fr_36%_1fr]'>
                 <article className='infosection_leftimage'>
                     <img className="w-full" src={dark} alt="Furnitures in the dark" />
                 </article>

@@ -5,7 +5,7 @@ import Showcase from './components/Showcase'
 
 function App() {
   return (
-    <div className='main max-w-[1440px] w-full mx-auto' role="main">  
+    <div role="main">  
       <Header />
       <Showcase />
       <InfoSection />

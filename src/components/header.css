@@ -1,0 +1,35 @@
+.topheader__list-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.topheader__list-item::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0; /* ersätter bottom: 0 */
+  inset-inline-start: 50%; /* ersätter left: 50% */
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  transform: translateX(-50%) translateY(5px); /* justerar transform */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.topheader__list-item:hover::after {
+  opacity: 1;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}

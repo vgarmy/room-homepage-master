@@ -65,8 +65,8 @@ function Showcase() {
                                 <img src={item.mobile} alt={item.title} className='w-full' />
                             </picture>
                             <ul className='sliders__change absolute bottom-0 right-0 flex lg:hidden'>
-                                <li><button onClick={previousSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={left} alt="Previous slide" /></button></li>
-                                <li><button onClick={nextSlide} className='bg-[var(--Black)] px-10 py-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={right} alt="Next slide" /></button></li>
+                                <li><button onClick={previousSlide} className='bg-[var(--Black)] p-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={left} alt="Previous slide" /></button></li>
+                                <li><button onClick={nextSlide} className='bg-[var(--Black)] p-6 hover:bg-[var(--Grey-800)] cursor-pointer'><img src={right} alt="Next slide" /></button></li>
                             </ul>
                         </div>
                         <div className='sliders__info px-8 py-20 w-full lg:w-[45%] flex flex-col relative'>
